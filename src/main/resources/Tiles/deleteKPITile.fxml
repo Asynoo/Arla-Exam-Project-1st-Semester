@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="76.0" prefWidth="253.0" style="-fx-background-radius: 10; -fx-background-color: transparent;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.Controllers.DeleteKPITileController">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="81.0" prefWidth="253.0" style="-fx-background-color: #626567#626567; -fx-background-radius: 10;">
+         <children>
+            <Label prefHeight="34.0" prefWidth="242.0" text="Are you sure you want to delete this KPI?" textFill="WHITE">
+               <font>
+                  <Font name="Gilroy-Regular" size="13.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="33.0" prefWidth="253.0" spacing="25.0">
+               <children>
+                  <JFXButton buttonType="RAISED" onAction="#deleteKPI" prefHeight="32.0" prefWidth="96.0" style="-fx-background-color: Red; -fx-text-fill: white;" text="Sure!">
+                     <font>
+                        <Font name="Gilroy-Regular" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="cancelButton" buttonType="RAISED" onAction="#cancelDelete" prefHeight="27.0" prefWidth="89.0" style="-fx-background-color: #2ECC71#2ECC71; -fx-text-fill: white;" text="Oh no!">
+                     <font>
+                        <Font name="Gilroy-Regular" size="16.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

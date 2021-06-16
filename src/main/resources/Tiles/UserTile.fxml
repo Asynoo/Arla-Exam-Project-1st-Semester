@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:id="baseBox" maxWidth="1.7976931348623157E308" minWidth="400.0" onMouseEntered="#actionOnHover" onMouseExited="#notHovering" onMouseReleased="#selectUserAction" prefHeight="82.0" prefWidth="605.0" style="-fx-background-color: #00aa14; -fx-background-radius: 0;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.Controllers.UserTileController">
+   <children>
+      <HBox prefHeight="27.0" prefWidth="471.0">
+         <children>
+            <Label fx:id="fullNameLabel" prefHeight="42.0" prefWidth="232.0" text="FirstName_LastName">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="adminLabelTile" prefHeight="44.0" prefWidth="87.0" text="Admin" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="Gilroy-Regular" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </Label>
+            <ChoiceBox fx:id="templateChoiceBox" prefHeight="35.0" prefWidth="149.0" style="-fx-border-color: white;" stylesheets="@../Css/Choicebox.css" />
+            <HBox fx:id="userChoicesHbox" prefHeight="35.0" prefWidth="101.0" spacing="10.0">
+               <children>
+                  <Button fx:id="userEditButton" mnemonicParsing="false" prefHeight="29.0" prefWidth="40.0" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Files/templateEdit.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button fx:id="removeUserButton" mnemonicParsing="false" prefHeight="29.0" prefWidth="40.0" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Files/templateRemove.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <Label fx:id="usernameLbl" prefHeight="27.0" prefWidth="420.0" text="UserName">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <cursor>
+      <Cursor fx:constant="HAND" />
+   </cursor>
+</VBox>

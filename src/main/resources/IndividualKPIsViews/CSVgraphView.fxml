@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="myAnchorPane" fx:id="anchorPane" prefHeight="496.0" prefWidth="600.0" style="-fx-background-color: gray;" stylesheets="@../Css/TableVuewStyling.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.IndividualKPIsControllers.legacyCode.testCss">
+   <padding>
+      <Insets left="40.0" top="40.0" />
+   </padding>
+</AnchorPane>

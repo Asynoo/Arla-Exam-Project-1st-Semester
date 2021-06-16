@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="basePane" prefHeight="715.0" prefWidth="1113.0" stylesheets="@../Css/TableVuewStyling.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.Controllers.KPI_DashboardViewController">
+   <center>
+      <StackPane fx:id="previewPane" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+   <top>
+      <BorderPane prefHeight="53.0" prefWidth="1113.0" style="-fx-background-color: #00aa14;" BorderPane.alignment="CENTER">
+         <left>
+            <Label alignment="CENTER" prefHeight="60.0" prefWidth="296.0" text="   Arla Foods | Factory KPI Tool" textFill="WHITE" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="42.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Files/arlalogosmall.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+         </left>
+         <right>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
+               <right>
+                  <JFXButton alignment="CENTER" onAction="#returnAction" prefHeight="32.0" prefWidth="27.0" style="-fx-background-color: transparent; -fx-background-radius: 10;" text="." textFill="#ffffff00" BorderPane.alignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Files/logout.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                     <BorderPane.margin>
+                        <Insets right="30.0" />
+                     </BorderPane.margin>
+                  </JFXButton>
+               </right>
+               <center>
+                  <Label fx:id="time" text="   Label" textFill="WHITE" BorderPane.alignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Files/clock.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <BorderPane.margin>
+                        <Insets right="30.0" />
+                     </BorderPane.margin>
+                  </Label>
+               </center>
+            </BorderPane>
+         </right>
+      </BorderPane>
+   </top>
+</BorderPane>

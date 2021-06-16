@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: #f9f9f9;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.Controllers.AdminDashboardViewController">
+   <center>
+      <StackPane fx:id="dashboardStackPane" prefHeight="150.0" prefWidth="200.0">
+         <children>
+            <BorderPane fx:id="usersTab" prefHeight="200.0" prefWidth="200.0">
+               <StackPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </StackPane.margin>
+               <center>
+                  <StackPane BorderPane.alignment="CENTER">
+                     <children>
+                        <VBox fx:id="createUserBox" prefHeight="336.0" prefWidth="415.0" spacing="20.0" visible="false">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="48.0" prefWidth="415.0" text="Create New User">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font></Label>
+                              <JFXTextField fx:id="createUsernameField" alignment="TOP_LEFT" focusColor="#4390ff" prefHeight="47.0" prefWidth="100.0" promptText="Username">
+                                 <font>
+                                    <Font name="Gilroy-Regular" size="16.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXPasswordField fx:id="createPasswordField" alignment="TOP_LEFT" focusColor="#4390ff" prefHeight="47.0" prefWidth="458.0" promptText="Password">
+                                 <font>
+                                    <Font name="Gilroy-Regular" size="16.0" />
+                                 </font>
+                              </JFXPasswordField>
+                              <JFXTextField fx:id="createFirstNameField" alignment="TOP_LEFT" focusColor="#4390ff" prefHeight="47.0" prefWidth="100.0" promptText="First Name (optional)">
+                                 <font>
+                                    <Font name="Gilroy-Regular" size="16.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="createLastNameField" alignment="TOP_LEFT" focusColor="#4390ff" prefHeight="47.0" prefWidth="100.0" promptText="Last Name (optional)">
+                                 <font>
+                                    <Font name="Gilroy-Regular" size="16.0" />
+                                 </font>
+                              </JFXTextField>
+                              <HBox prefHeight="55.0" prefWidth="415.0" spacing="20.0">
+                                 <children>
+                                    <JFXCheckBox fx:id="createIsAdminCheckbox" prefHeight="55.0" prefWidth="185.0" text="Is the user an Admin">
+                                       <font>
+                                          <Font name="Gilroy-Regular" size="16.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXCheckBox>
+                                    <JFXButton contentDisplay="RIGHT" onAction="#cancelCreateUser" prefHeight="33.0" prefWidth="50.0" style="-fx-background-color: #E74C3C; -fx-background-radius: 1;" text="X" textFill="WHITE">
+                                       <font>
+                                          <Font name="Gilroy-Regular" size="16.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <HBox.margin>
+                                          <Insets top="10.0" />
+                                       </HBox.margin>
+                                    </JFXButton>
+                                    <JFXButton contentDisplay="RIGHT" onAction="#createUser" prefHeight="33.0" prefWidth="80.0" style="-fx-background-color: #00aa14; -fx-background-radius: 1;" text="Create" textFill="WHITE">
+                                       <font>
+                                          <Font name="Gilroy-Regular" size="16.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets top="10.0" />
+                                       </HBox.margin>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets left="100.0" right="200.0" top="40.0" />
+                           </padding>
+                        </VBox>
+                        <ScrollPane fx:id="usersScrollPane" fitToWidth="true" hbarPolicy="NEVER" maxWidth="1.7976931348623157E308" prefHeight="580.0" prefWidth="787.0" style="-fx-background-color: transparent; -fx-background: transparent;" vbarPolicy="NEVER" visible="false">
+                           <content>
+                              <VBox fx:id="usersVBox" maxWidth="1.7976931348623157E308" spacing="5.0" />
+                           </content>
+                           <StackPane.margin>
+                              <Insets right="100.0" />
+                           </StackPane.margin>
+                        </ScrollPane>
+                        <VBox fx:id="editUserBox" prefHeight="336.0" prefWidth="415.0" spacing="20.0" visible="false">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="48.0" prefWidth="415.0" text="Edit User">
+                                 <font>
+                                    <Font name="Gilroy-Regular" size="24.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextField fx:id="editUsernameField" alignment="TOP_LEFT" focusColor="#4390ff" prefHeight="47.0" prefWidth="100.0" promptText="Username">
+                                 <font>
+                                    <Font name="Gilroy-Regular" size="16.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXPasswordField fx:id="editPasswordField" alignment="TOP_LEFT" focusColor="#4390ff" prefHeight="47.0" prefWidth="458.0" promptText="Password">
+                                 <font>
+                                    <Font name="Gilroy-Regular" size="16.0" />
+                                 </font>
+                              </JFXPasswordField>
+                              <JFXTextField fx:id="editFirstNameField" alignment="TOP_LEFT" focusColor="#4390ff" prefHeight="47.0" prefWidth="100.0" promptText="First Name (optional)">
+                                 <font>
+                                    <Font name="Gilroy-Regular" size="16.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="editLastNameField" alignment="TOP_LEFT" focusColor="#4390ff" prefHeight="47.0" prefWidth="100.0" promptText="Last Name (optional)">
+                                 <font>
+                                    <Font name="Gilroy-Regular" size="16.0" />
+                                 </font>
+                              </JFXTextField>
+                              <HBox prefHeight="55.0" prefWidth="415.0" spacing="90.0">
+                                 <children>
+                                    <JFXCheckBox fx:id="editIsAdminCheckbox" prefHeight="55.0" prefWidth="185.0" text="Is the user an Admin">
+                                       <font>
+                                          <Font name="Gilroy-Regular" size="16.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXCheckBox>
+                                    <JFXButton contentDisplay="RIGHT" onAction="#saveEditUser" prefHeight="33.0" prefWidth="80.0" style="-fx-background-color: #34FB85; -fx-background-radius: 10;" text="Save" textFill="WHITE">
+                                       <font>
+                                          <Font name="Gilroy-Regular" size="16.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets top="10.0" />
+                                       </HBox.margin>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets left="100.0" right="200.0" top="40.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </StackPane>
+               </center>
+               <StackPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </StackPane.margin>
+               <top>
+                  <HBox prefHeight="57.0" prefWidth="816.0" spacing="20.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="usersLbl" alignment="BASELINE_LEFT" maxWidth="1.7976931348623157E308" prefHeight="33.0" prefWidth="143.0" text="Users">
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets top="14.0" />
+                     </padding>
+                  </HBox>
+               </top>
+            </BorderPane>
+            <BorderPane fx:id="templatesTab" layoutX="15.0" layoutY="15.0" prefHeight="200.0" prefWidth="200.0">
+               <top>
+                  <Label fx:id="templatesLbl" alignment="BASELINE_LEFT" maxWidth="1.7976931348623157E308" prefHeight="59.0" prefWidth="351.0" text="Dashboard templates" visible="false" BorderPane.alignment="CENTER">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </Label>
+               </top>
+               <center>
+                  <ScrollPane fx:id="templatesScrollPane" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="NEVER" BorderPane.alignment="CENTER">
+                     <content>
+                        <TilePane fx:id="templatesTilePane" hgap="30.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" tileAlignment="TOP_LEFT" vgap="30.0">
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding></TilePane>
+                     </content>
+                  </ScrollPane>
+               </center>
+            </BorderPane>
+         </children>
+      </StackPane>
+   </center>
+   <left>
+      <VBox fx:id="tabsBox" prefHeight="647.0" prefWidth="227.0" style="-fx-background-color: #f3f2f1;" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton fx:id="arlaLogoButton" cancelButton="true" onAction="#arlaButtonAction" prefHeight="134.0" prefWidth="209.0" style="-fx-background-color: #f3f2f1; -fx-background-radius: 1;" text="x" textFill="#f3f2f1" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="3.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets right="20.0" />
+               </BorderPane.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fx:id="logoView" fitHeight="137.0" fitWidth="169.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </VBox.margin>
+                     <image>
+                        <Image url="@../Files/2.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+
+            <JFXButton fx:id="usersBtn" alignment="BASELINE_LEFT" maxWidth="1.7976931348623157E308" onAction="#usersAction" prefHeight="45.0" style="-fx-background-color: #f3f2f1; -fx-background-radius: 0;" text="Users">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <graphic>
+                  <ImageView fx:id="userImage" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Files/user.png" />
+                     </image></ImageView>
+               </graphic>
+            </JFXButton>
+            <VBox fx:id="usersClickVBox" alignment="BOTTOM_RIGHT" prefHeight="8.0" prefWidth="209.0" style="-fx-background-color: #f3f2f1;">
+               <children>
+                  <JFXButton fx:id="newUserButton" alignment="TOP_LEFT" onAction="#newUserAction" prefHeight="42.0" prefWidth="232.0" style="-fx-background-color: #f3f2f1; -fx-background-radius: 0;" text="New user">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/NewUser.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="40.0" />
+               </VBox.margin>
+            </VBox>
+            <JFXButton fx:id="templatesBtn" alignment="BASELINE_LEFT" maxWidth="1.7976931348623157E308" onAction="#templatesAction" prefHeight="45.0" style="-fx-background-color: #f3f2f1; -fx-background-radius: 0;" text="Dashboard Templates">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <graphic>
+                  <ImageView fx:id="kpiImage" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Files/kpi.png" />
+                     </image></ImageView>
+               </graphic>
+            </JFXButton>
+            <VBox fx:id="templatesClickVBox" prefHeight="75.0" prefWidth="209.0">
+               <children>
+                  <JFXButton alignment="BASELINE_LEFT" onAction="#newTemplateAction" prefHeight="43.0" prefWidth="252.0" text="New template">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Files/templateAdd.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </VBox>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+   <top>
+      <BorderPane prefHeight="53.0" prefWidth="1000.0" style="-fx-background-color: #00aa14;" BorderPane.alignment="CENTER">
+         <left>
+            <Label fx:id="infoLabel" alignment="BASELINE_LEFT" prefHeight="59.0" prefWidth="351.0" text="Arla Foods | Admin KPI Control: " textFill="WHITE" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets left="30.0" />
+               </BorderPane.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </left>
+         <right>
+            <JFXButton fx:id="signOutButton" cancelButton="true" onAction="#logOutAction" prefHeight="24.0" prefWidth="24.0" style="-fx-background-color: #00aa14; -fx-background-radius: 5;" text="x" textFill="#00aa14" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="3.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets right="20.0" />
+               </BorderPane.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fx:id="logOutImage" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Files/logout.png" />
+                     </image></ImageView>
+               </graphic>
+            </JFXButton>
+         </right>
+      </BorderPane>
+   </top>
+</BorderPane>
